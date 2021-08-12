@@ -11,7 +11,7 @@ unsigned int CalculateCRC16(char* message, unsigned short length) {
 		crc ^= (message[j] << 8); //converting 8-bits of data to 16-bits of data and intermedşat crc value
 		j += 1;
 		for (int i = 0; i < 8; i++) {
-			if ((crc & (0x****)) != 0) {
+			if ((crc & (0x8000)) != 0) {
 				crc = crc << 1;
 				crc ^= poly;
 			}
